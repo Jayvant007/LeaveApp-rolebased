@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        
+        <div class=" h4" id="navbarText">
+          <span class="navbar-text h4 mr-auto">
+          User Name : {{stuffdata.fName + " " + stuffdata.lName}}<br>
+          Department : {{stuffdata.depart}}<br>
+          
+
+          </span>
+          
+        </div>
+      </nav>
+      <div class="cbutton mb-4">
+        <div><button class="btn btn-primary" (click)="openDialog()">Apply Leave</button></div>
+        <div><button class="btn btn-danger ml-auto" routerLink="[/Login]">Sign Out</button></div>
+      </div>
+      <ng-container *ngIf="!leaveArr?.length" >
+            <p class="h4 text-danger">Not applied any leave yet.</p>
+      </ng-container>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container mt-2">
+  <div class="row h4">
+    <div class="col-3 text-center ">
+      <p><span class="font">{{stuffdata.assignedLeaves}}</span><br>Total Assigned Leaves</p>
+    </div>
+    <div class="col-3 text-center ">
+      <p> <span class="font">{{stuffdata.totalLeaves}}</span><br>Total Balanced Leaves</p>
+    </div>
+    <div class="col-3 text-center"><span class="font">{{stuffdata.approvedleave}}</span> <br>Total Approved</div>
+    <div class="col-3 text-center"><span class="font">{{stuffdata.rejectedleave}}</span> <br> Total Rejected</div>
+  </div>
+  </div>
+  <div class="container">
+  <div class="row">
+    <ng-container *ngIf="leaveArr.length">
+      
+    <ng-container *ngFor="let leave of leaveArr">
+      <div class="col-lg-4 mb-3">
+       
+                <div class="card">
+                  <div class="card-body font-weight-bold">
+                    <p>Leave From {{leave.leaveStart}} to {{leave.leaveEnd}}</p>
+                    <p>Number of days = {{leave.leaveDays}}</p>
+                    <h4 class="font-weight-bolder">Reason :</h4>
+                    <p>{{leave.leaveReason}}</p>
+                    <h4 class="font-weight-bolder">Status :</h4>
+                    <p>{{leave.statusLeave}}</p>
+                  </div>
+                </div>
+              </div>
+      </ng-container>
+    </ng-container>
+  </div>
+</div>
+
+  
+
+  
+  

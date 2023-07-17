@@ -1,0 +1,7 @@
+.font{
+    font-size: 29px;
+}
+.dis{
+    display: flex;
+    justify-content: space-between;
+}

@@ -1,0 +1,79 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <form #registerForm="ngForm" (ngSubmit)="onregister()">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="hod" name="regfor" class="custom-control-input" ngModel value="hod" required>
+                            <label class="custom-control-label h4" for="hod" >HOD</label>
+                          </div>
+                          <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="staff" name="regfor" class="custom-control-input" ngModel value="staff">
+                            <label class="custom-control-label h4" for="staff">Staff</label>
+                          </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="fName" class="h4">First Name</label>
+                        <input type="text" class="form-control" name="fName" id="fName" ngModel required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="lName" class="h4">Last Name</label>
+                        <input type="text" class="form-control" name="lName" id="lName" ngModel required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="email" class="h4">Email</label>
+                        <input type="email" class="form-control" name="email" id="email" ngModel required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="contact" class="h4">Contact</label>
+                        <input type="text" class="form-control" name="contact" id="contact" ngModel required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="depart" class="h4">Department</label>
+                            <select name="depart" id="" class="form-control h6" ngModel required>
+                                <option value="Computer" class="h6">Computer</option>
+                                <option value="IT" class="h6">IT</option>
+                                <option value="E&TC" class="h6">E&TC</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="username" class="h4">Username</label>
+                            <input type="text" class="form-control" name="username" id="username" ngModel required>
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="password" class="h4">Password</label>
+                            <input type="text" class="form-control" name="password" id="password" ngModel required>
+                        </div>
+                    </div>
+                    <div class="col-md-12 offset-md-0 mt-4">
+                        <button class="btn btn-primary btn-block" [disabled]="registerForm.invalid">Register</button>
+                    </div>
+                    <div class="mt-4 text-center col-md-12">
+                        <span class="mt-1 h6">Already registered? <a routerLink="/log">Login</a></span>
+                    </div>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+</div>
+

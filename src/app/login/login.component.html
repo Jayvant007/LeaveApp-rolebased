@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3" >
+            <div class="custom-transform">
+                <form #userForm="ngForm" (ngSubmit)="checkUser()">
+                    <div class="form-group">
+                        <label for="username" class="h4">UserName</label>
+                        <input type="email" class="form-control" name="username" id="username" ngModel required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="h4">Password</label>
+                        <input type="text" class="form-control" name="password" id="password" ngModel required>
+                    </div>
+                    <button class="btn btn-primary btn-block" type="submit" [disabled]="userForm.invalid">Login</button>
+                </form>
+                <div class="mt-4 text-center">
+                    <span class="mt-1 h6">Not registered yet? <a routerLink='/reg'>Register</a></span>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>

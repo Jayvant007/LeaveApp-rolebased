@@ -1,0 +1,36 @@
+
+<div class="container">
+    <div class="row">
+        <div class="custom col-12">
+            <div class="col-8 col-xs-8"><h2>Department Staff List</h2></div>
+            <div class="col-2"><button class="btn btn-primary" routerLink="[hod]">Dashboard</button></div>
+        </div>
+        <div class="col-12">
+            <table class="table text-center">
+                <thead class="">
+                  <tr>
+                    <th scope="col">Sr No</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Contact No.</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Remove from list</th>
+              
+                  </tr>
+                </thead>
+                <tbody>
+                  <ng-container *ngFor="let user of hodDetailsArr; let i = index">
+                      <tr>
+                          <th scope="row">{{i +1}}</th>
+                          <td>{{user.fName + " " + user.lName}}</td>
+                          <td>{{user.contact}}</td>
+                          <td>{{user.email}}</td>
+                          <td><button class="btn btn-danger" (click)="onRemove(user)">Remove</button></td>
+                        </tr>
+                  </ng-container>
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>
+
+

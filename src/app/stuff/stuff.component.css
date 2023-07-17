@@ -1,0 +1,9 @@
+.cbutton{
+    display: flex;
+    justify-content: space-between;
+}
+.font{
+    font-size: 50px;
+    font-weight: bolder;
+   
+}

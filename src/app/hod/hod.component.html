@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light dis">
+        
+                <div class=" h4" id="navbarText">
+                  <span class="navbar-text h3 p-0 mr-auto">
+                  User Name : {{hodDetails.fName + " " + hodDetails.lName + " (HOD)" }}<br>
+                  Department : {{hodDetails.depart}}<br>
+                  </span>
+                  
+                </div>
+                
+                <div>
+                    <button class="btn btn-primary mr-3" routerLink="/stuff-details">Stuff Details</button>
+                <button class="btn btn-danger" routerLink="[/log]">Sign Out</button>
+
+                </div>
+              </nav>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <ng-container *ngFor="let leave of departLeaveArr,let i = index">
+                <div class="col-md-4">
+                    <div class="card mb-3">
+                        <div class="card-body h6">
+                            <p class="font-weight-bolder">{{leave.fName}} {{leave.lName}}</p>
+                            <p>Leave From {{leave.leaveStart}} to {{leave.leaveEnd}}</p>
+                        <p>Number of days = {{leave.leaveDays}}</p>
+                        <p class="font-weight-bolder">Reason :</p>
+                        <p>{{leave.leaveReason}}</p>
+                            <div class="row" *ngIf="!(leave.statusLeave == 'Approved') && !(leave.statusLeave == 'Rejected') " >
+                                <div class="col-6">
+                                    <button class="btn btn-primary btn-block" (click)="onApprove(leave)">Approve</button>
+                                </div>
+                                <div class="col-6">
+                                    <button class="btn btn-danger btn-block" (click)="onReject(leave)" >Reject</button>
+                                </div>
+                            </div>
+                            <p class="text-success font-weight-bolder" *ngIf="leave.statusLeave == 'Approved'"><span><i class="fa fa-check fa-2x mr-2" aria-hidden="true"></i></span><span class="font">Approved</span></p>
+                            <p class="text-danger font-weight-bolder" *ngIf="leave.statusLeave == 'Rejected'"><span><i class="fa fa-check fa-2x mr-2" aria-hidden="true"></i></span ><span class="font">Rejected</span></p>
+                           
+                        </div>
+                    </div>
+                </div>
+            
+        </ng-container>
+        <ng-container  *ngIf="!departLeaveArr.length">
+            <div class="col-12 text-center">
+            <p class="h3">No Leave Request available for now.</p>
+            </div>
+        </ng-container>
+    </div>
+</div>
