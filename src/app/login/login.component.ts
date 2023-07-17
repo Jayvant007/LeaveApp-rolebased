@@ -16,14 +16,10 @@ checkUser(){
     userId : this.loginFormObj.value.username,
     userPass : this.loginFormObj.value.password
   }
-  // console.log(obj1)
   this.httpServ.signInCurrentUser(obj1).subscribe((respdata:any)=>{
-    // console.log(respdata)
     this.httpServ.getUsers().subscribe((rawData:any)=>{
       for(let mainuser in rawData){
-        // console.log(rawData[mainuser]);
         if(rawData[mainuser].username == respdata.email){
-        //  console.log(rawData[mainuser]) 
          this.httpServ.getuserdataofStuff(rawData[mainuser])
          if(rawData[mainuser].regfor == 'staff'){
           this.httpServ.getuserdataofStuff(rawData[mainuser])
@@ -38,9 +34,6 @@ checkUser(){
       }
     })    
   })
-  
-
-
   this.loginFormObj.reset()
 }
 }

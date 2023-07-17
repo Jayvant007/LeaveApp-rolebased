@@ -8,13 +8,10 @@
                   User Name : {{hodDetails.fName + " " + hodDetails.lName + " (HOD)" }}<br>
                   Department : {{hodDetails.depart}}<br>
                   </span>
-                  
                 </div>
-                
                 <div>
                     <button class="btn btn-primary mr-3" routerLink="/stuff-details">Stuff Details</button>
                 <button class="btn btn-danger" routerLink="[/log]">Sign Out</button>
-
                 </div>
               </nav>
         </div>
@@ -41,11 +38,9 @@
                             </div>
                             <p class="text-success font-weight-bolder" *ngIf="leave.statusLeave == 'Approved'"><span><i class="fa fa-check fa-2x mr-2" aria-hidden="true"></i></span><span class="font">Approved</span></p>
                             <p class="text-danger font-weight-bolder" *ngIf="leave.statusLeave == 'Rejected'"><span><i class="fa fa-check fa-2x mr-2" aria-hidden="true"></i></span ><span class="font">Rejected</span></p>
-                           
                         </div>
                     </div>
                 </div>
-            
         </ng-container>
         <ng-container  *ngIf="!departLeaveArr.length">
             <div class="col-12 text-center">

@@ -18,8 +18,7 @@ import { StuffComponent } from './stuff/stuff.component';
 import { HodComponent } from './hod/hod.component';
 import { DialogApplyLeaveComponent } from './stuff/dialog-apply-leave/dialog-apply-leave.component';
 import { StuffDetailsComponent } from './hod/stuff-details/stuff-details.component';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { MatButtonModule } from '@angular/material/button';
+
 
 @NgModule({
   declarations: [
@@ -40,8 +39,6 @@ import { MatButtonModule } from '@angular/material/button';
     MatFormFieldModule,
     MatNativeDateModule,
     MatDialogModule,
-    MatSnackBarModule,
-    MatButtonModule,
     HttpClientModule,
     AppRoutingModule,
     FormsModule,

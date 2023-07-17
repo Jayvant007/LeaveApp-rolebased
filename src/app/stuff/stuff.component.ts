@@ -14,9 +14,7 @@ fromDate: Date |any;
 toDate: Date | any;
 leaveArr:any= []
 constructor(private httpServ : HttpHandlerService,public dialog: MatDialog){
-  
 }
-
 onSelection(): void {
   console.log('Start Date:', this.fromDate);
   console.log('End Date:', this.toDate);

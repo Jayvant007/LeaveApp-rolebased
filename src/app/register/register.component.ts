@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { HttpHandlerService } from '../shared/services/httpser.service';
 import { Router } from '@angular/router';
 
@@ -7,12 +7,9 @@ import { Router } from '@angular/router';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent implements OnInit{
+export class RegisterComponent {
   @ViewChild('registerForm') regFromObj : any;
   constructor(private httpServ : HttpHandlerService, private router : Router){}
-  ngOnInit(): void {
-    // this.onregister()
-  }
 onregister(){
   let obj1 = {
     username : this.regFromObj.value.username,
@@ -26,8 +23,6 @@ onregister(){
   obj.rejectedleave=0;
   obj.appliedLeaveData=[];
   obj.statusLeave='Pending  '
-  // console.log(obj)
-  
   this.httpServ.signUpNewUser(obj1).subscribe((rawdata:any)=>{
     this.httpServ.postUser(obj).subscribe((data:any)=>{
     });
